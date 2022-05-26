@@ -117,18 +117,18 @@ function App() {
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "",
+    CONTRACT_ADDRESS: "0xcC28739a14C0D563c72f09dbB0045071399c3e2F",
     SCAN_LINK: "",
     NETWORK: {
       NAME: "",
       SYMBOL: "",
       ID: 0,
     },
-    NFT_NAME: "",
-    SYMBOL: "",
-    MAX_SUPPLY: 1,
-    WEI_COST: 0,
-    DISPLAY_COST: 0,
+    NFT_NAME: "Project name",
+    SYMBOL: "TKTK",
+    MAX_SUPPLY: 3333,
+    WEI_COST: 1000000000000000,
+    DISPLAY_COST: 0.001,
     GAS_LIMIT: 0,
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
@@ -217,11 +217,11 @@ function App() {
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
         // image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <h1>TEST NFT WATERMARK</h1>
+        {/* <h1>TEST NFT WATERMARK</h1> */}
         
         {/* <StyledLogo alt={"logo"} src={"/config/images/logo.png"} /> */}
         <s.SpacerSmall />
-        <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
+        <ResponsiveWrapper flex={1} style={{ padding: 24 }}>
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"noun"} src={"/config/images/art.png"} />
           </s.Container>
@@ -231,11 +231,7 @@ function App() {
             jc={"center"}
             ai={"center"}
             style={{
-              backgroundColor: "var(--accent)",
               padding: 24,
-              borderRadius: 24,
-              border: "4px dashed var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
             }}
           >
             <s.TextTitle
