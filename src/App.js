@@ -4,6 +4,7 @@ import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
+import web3 from "web3";
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -75,10 +76,6 @@ export const StyledLogo = styled.img`
 `;
 
 export const StyledImg = styled.img`
-  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px dashed var(--secondary);
-  background-color: var(--accent);
-  border-radius: 100%;
   width: 200px;
   @media (min-width: 900px) {
     width: 250px;
@@ -93,6 +90,24 @@ export const StyledLink = styled.a`
   color: var(--secondary);
   text-decoration: none;
 `;
+
+const User = () => {
+  const { authenticate, isAuthenticated, user } = useMoralis();
+
+  if (!isAuthenticated) {
+    return (
+      <div>
+        <button onClick={() => authenticate()}>Authenticate</button>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <h1>Hi {user.get('username')}</h1>
+    </div>
+  );
+};
 
 function App() {
   const dispatch = useDispatch();
@@ -182,6 +197,7 @@ function App() {
       },
     });
     const config = await configResponse.json();
+    console.log(config);
     SET_CONFIG(config);
   };
 
@@ -199,13 +215,15 @@ function App() {
         flex={1}
         ai={"center"}
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        // image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+        <h1>TEST NFT WATERMARK</h1>
+        
+        {/* <StyledLogo alt={"logo"} src={"/config/images/logo.png"} /> */}
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+            <StyledImg alt={"noun"} src={"/config/images/art.png"} />
           </s.Container>
           <s.SpacerLarge />
           <s.Container
@@ -370,13 +388,13 @@ function App() {
             <s.SpacerMedium />
           </s.Container>
           <s.SpacerLarge />
-          <s.Container flex={1} jc={"center"} ai={"center"}>
+          {/* <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg
               alt={"example"}
               src={"/config/images/example.gif"}
               style={{ transform: "scaleX(-1)" }}
             />
-          </s.Container>
+          </s.Container> */}
         </ResponsiveWrapper>
         <s.SpacerMedium />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
