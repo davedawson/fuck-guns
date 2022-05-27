@@ -161,7 +161,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `Mint confirmed. Thank you for supporting Fuck Guns and Everytown For Gun Safety.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
