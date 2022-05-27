@@ -6,13 +6,13 @@
     "SYMBOL": "ETH",
     "ID": 4
   },
-  "NFT_NAME": "Name TKTK",
-  "SYMBOL": "TKTK",
-  "MAX_SUPPLY": 3333,
+  "NFT_NAME": "Fuck Guns",
+  "SYMBOL": "FKGNS",
+  "MAX_SUPPLY": 2500,
   "WEI_COST": 1000000000000000,
-  "DISPLAY_COST": 0.001,
+  "DISPLAY_COST": 0.01,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/tktk",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/fuckgunsnft",
   "SHOW_BACKGROUND": false
 }

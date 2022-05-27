@@ -48,6 +48,11 @@ export const Container = styled.div`
   background-image: ${({ image }) => (image ? `url(${image})` : "none")};
   background-size: cover;
   background-position: center;
+  padding: 45px;
+  max-width: 800px;
+  @media (min-width: 767px) {
+    padding: 90px;
+  }
 `;
 
 export const TextTitle = styled.p`
