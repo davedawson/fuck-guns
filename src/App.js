@@ -227,9 +227,9 @@ function App() {
           <h1><strong>FUCK GUNS</strong></h1>
           <p>We can’t take anymore doom scrolling. It’s time to DO SOMETHING.</p>
           <p>The tragedy in Uvalde, Texas should have never happened. Gun violence is a uniquely American problem and we are tired of inaction.</p>
-          <p>Let’s harness the power of the community in Web3 to show our support for ending these senseless acts of violence and donate to xx organizations that are critical in the fight to end gun violence.</p>
-          <p>We are releasing a limited edition NFT of 2500 at a mint price of 0.01 ETH + gas. All proceeds will go directly to the ETH wallet via smart contract to the organization of your choice.</p>
-          <p>This project is not associated with X org. Each item in the collection is identical.</p>
+          <p>Let’s harness the power of the community in Web3 to show our support for ending these senseless acts of violence and donate to organizations that are critical in the fight to end gun violence.</p>
+          <p>We are releasing a limited edition NFT of 2500 at a mint price of .01 ETH + gas. All proceeds from the mint and secondary sales go directly to the ETH wallet via smart contract to <a href="">Everytown for Gun Safety</a>. We encourage you to inspect the contract to confirm.</p>
+          <p>This project is not associated with Everytown for Gun Safety.</p>
         </div>
         <ResponsiveWrapper flex={1} style={{ padding: 0 }}>
           <s.Container
