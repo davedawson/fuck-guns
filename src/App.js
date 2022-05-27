@@ -228,7 +228,7 @@ function App() {
           <p>We can’t take anymore doom scrolling. It’s time to DO SOMETHING.</p>
           <p>The tragedy in Uvalde, Texas should have never happened. Gun violence is a uniquely American problem and we are tired of inaction.</p>
           <p>Let’s harness the power of the community in Web3 to show our support for ending these senseless acts of violence and donate to organizations that are critical in the fight to end gun violence.</p>
-          <p>We are releasing a limited edition NFT of 2500 at a mint price of .01 ETH + gas. All proceeds from the mint and secondary sales go directly to the ETH wallet via smart contract to <a href="">Everytown for Gun Safety</a>. We encourage you to inspect the contract to confirm.</p>
+          <p>We are releasing a limited edition NFT of 2500 at a mint price of .01 ETH + gas. All proceeds from the mint and secondary sales go directly to the ETH wallet via smart contract to <a href="https://www.everytown.org/">Everytown for Gun Safety</a>. We encourage you to inspect the contract to confirm.</p>
           <p>This project is not associated with Everytown for Gun Safety.</p>
         </div>
         <ResponsiveWrapper flex={1} style={{ padding: 0 }}>
@@ -421,23 +421,39 @@ function App() {
           </s.TextDescription>
         </s.Container> */}
       <s.SpacerMedium />
-      <s.TextTitle
-        style={{
-          textAlign: "left",
-          fontSize: 50,
-          fontWeight: "bold",
-          color: "var(--accent-text)",
-        }}
-      >
-        FAQs
-      </s.TextTitle>
-      <div className="description">
-        <p>
-          tktk
-        </p>
-      </div>
+      
         
       </s.Container>
+      <s.Container
+        flex={1}
+        ai={"left"}
+        className="faq"
+        style={{ 
+          
+        }}
+      >
+        <s.TextTitle
+            style={{
+              textAlign: "left",
+              fontSize: 50,
+              fontWeight: "bold",
+              color: "var(--accent-text)",
+            }}
+          >
+            FAQs
+          </s.TextTitle>
+          <div className="description">
+            <h3>Why an NFT?</h3>
+            <p>NFT&rsquo;s and the community bring a unique opportunity to combine self expression with the utilization of cc0 assets (thank you <a href="https://nouns.wtf/">Nouns DAO</a>!), as well as smart contracts to directly support organizations and causes.</p>
+            <h3>What is the NFT supply?</h3>
+            <p>2500 identical NFTs</p>
+            <h3>Will all the money go directly to the organizations?</h3>
+            <p>Yes. The withdrawal function in the minting contract deposits all funds directly into Everytown for Gun Safety’s eth wallet. We'll initiate the transaction once the project mints out. You can inspect the contract code here to confirm. All secondary sales will also go directly to that wallet.</p>
+            <h3>Who made this?</h3>
+            <p>Two concerned parents who, just like you, are fed up with the lack of action and solutions to gun violence. <a href="https://twitter.com/davedawson">Dave</a> has a background in design and web products for mission driven organizations and <a href="https://twitter.com/Samantha__Couch">Sam</a> works in nonprofit and political advocacy fighting for justice and equity.&nbsp;</p>
+          </div>
+      </s.Container>
+
       
 
     </s.Screen>

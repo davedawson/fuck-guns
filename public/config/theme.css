@@ -22,10 +22,27 @@
   margin-bottom: 0.8em;
   opacity: 0.9;
 }
+
+.description a {
+  color: #fff;
+}
+
 strong {
   font-weight: bold;
 }
 
 #root {
   border: 10px solid #fff;
+}
+
+.faq {
+
+}
+
+.faq h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-top: 1.2em;
+  margin-bottom: 0.25em;
+  font-weight: bold;
 }
