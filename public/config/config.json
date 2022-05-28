@@ -1,16 +1,16 @@
 {
-  "CONTRACT_ADDRESS": "0x82444b4d693acff4dab3215e12dafab59c574087",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x82444b4d693acff4dab3215e12dafab59c574087",
+  "CONTRACT_ADDRESS": "0xb008E8bA8bE55D6B0F627eA8975F15094ab58B7F",
+  "SCAN_LINK": "https://etherscan.io/address/0xb008e8ba8be55d6b0f627ea8975f15094ab58b7f",
   "NETWORK": {
-    "NAME": "Rinkeby Test Network",
+    "NAME": "Ethereum Mainnet",
     "SYMBOL": "ETH",
-    "ID": 4
+    "ID": 1
   },
-  "NFT_NAME": "Fuck Guns NFT",
+  "NFT_NAME": "Fuck Guns",
   "SYMBOL": "FCKGNS",
   "MAX_SUPPLY": 2500,
-  "WEI_COST": 100000000000000,
-  "DISPLAY_COST": 0.001,
+  "WEI_COST": 10000000000000000,
+  "DISPLAY_COST": 0.01,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/fuckgunsnft",
