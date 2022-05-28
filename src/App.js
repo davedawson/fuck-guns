@@ -450,7 +450,7 @@ function App() {
             <h3>What is the NFT supply?</h3>
             <p>2500 identical NFTs</p>
             <h3>Will all the money go directly to the organizations?</h3>
-            <p>Yes. The withdrawal function in the minting contract deposits all funds directly into Everytown for Gun Safety’s eth wallet. We'll initiate the transaction once the project mints out. You can inspect the contract code here to confirm. All secondary sales will also go directly to that wallet.</p>
+            <p>Yes. The withdrawal function in the minting contract will be deposited directly into an ETH wallet owned by Everytown for Gun Safety. We'll initiate the transaction once the project mints out. All secondary sales will also go directly to the Everytown wallet.</p>
             <h3>Who made this?</h3>
             <p>Two concerned parents who, just like you, are fed up with the lack of action and solutions to gun violence. <a href="https://twitter.com/davedawson">Dave</a> has a background in design and web products for mission driven organizations and <a href="https://twitter.com/Samantha__Couch">Sam</a> works in nonprofit and political advocacy fighting for justice and equity.&nbsp;</p>
             <h3>Why are all of the NFTs the same?</h3>
