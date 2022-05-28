@@ -1,55 +1,44 @@
 // SPDX-License-Identifier: MIT
 
-// Amended by HashLips
-/**
-    !Disclaimer!
-
-    These contracts have been used to create tutorials,
-    and was created for the purpose to teach people
-    how to create smart contracts on the blockchain.
-    please review this code on your own before using any of
-    the following code for production.
-    The developer will not be responsible or liable for all loss or 
-    damage whatsoever caused by you participating in any way in the 
-    experimental code, whether putting money into the contract or 
-    using the code for your own project.
-*/
+// /^^^^^^^^               /^^             /^^^^                           
+// /^^                     /^^           /^    /^^                         
+// /^^      /^^  /^^   /^^^/^^  /^^     /^^        /^^  /^^/^^ /^^   /^^^^ 
+// /^^^^^^  /^^  /^^ /^^   /^^ /^^      /^^        /^^  /^^ /^^  /^^/^^    
+// /^^      /^^  /^^/^^    /^/^^        /^^   /^^^^/^^  /^^ /^^  /^^  /^^^ 
+// /^^      /^^  /^^ /^^   /^^ /^^       /^^    /^ /^^  /^^ /^^  /^^    /^^
+// /^^        /^^/^^   /^^^/^^  /^^       /^^^^^     /^^/^^/^^^  /^^/^^ /^^
+                                                                        
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-
-contract FuckGunsNFT is ERC721, Ownable {
-  using Strings for uint256;
+contract FuckGuns is ERC721A, Ownable {
+  constructor() ERC721A("Fuck Guns NFT", "FCKGNS") {}  
   using Counters for Counters.Counter;
+  using Strings for uint256;
 
   Counters.Counter private supply;
 
-  string public uriPrefix = "ipfs://QmVVqN9z49eWFJosmsoRZsxksr21jSWqTwe8w2rMcKtVHM/";
+  string public uriPrefix = "ipfs://QmUzzvNSKYpt9idCKPQxcbzBLwvNGPbPcUacQL7ajAnBzL/";
   string public uriSuffix = ".json";
   string public hiddenMetadataUri;
   
   uint256 public cost = 0.01 ether;
-  uint256 public maxSupply = 10000;
+  uint256 public maxSupply = 2500;
   uint256 public maxMintAmountPerTx = 5;
+  
+  address public fundsReceiver = 0x1E506287e8eae98EAc9393FFED702D22c4440681;
 
   bool public paused = true;
-  bool public revealed = false;
-
-  constructor() ERC721("Fuck Guns", "FCKGNS") {
-    setHiddenMetadataUri("ipfs://QmVVqN9z49eWFJosmsoRZsxksr21jSWqTwe8w2rMcKtVHM/");
-  }
+  bool public revealed = true;
 
   modifier mintCompliance(uint256 _mintAmount) {
     require(_mintAmount > 0 && _mintAmount <= maxMintAmountPerTx, "Invalid mint amount!");
     require(supply.current() + _mintAmount <= maxSupply, "Max supply exceeded!");
     _;
-  }
-
-  function totalSupply() public view returns (uint256) {
-    return supply.current();
   }
 
   function mint(uint256 _mintAmount) public payable mintCompliance(_mintAmount) {
@@ -118,6 +107,10 @@ contract FuckGunsNFT is ERC721, Ownable {
     cost = _cost;
   }
 
+  function setFundsReceiver(address _fundsReceiver) public onlyOwner {
+    fundsReceiver = _fundsReceiver;
+  }
+
   function setMaxMintAmountPerTx(uint256 _maxMintAmountPerTx) public onlyOwner {
     maxMintAmountPerTx = _maxMintAmountPerTx;
   }
@@ -138,18 +131,15 @@ contract FuckGunsNFT is ERC721, Ownable {
     paused = _state;
   }
 
-  function withdraw() public onlyOwner {
-    // This will pay HashLips 5% of the initial sale.
-    // You can remove this if you want, or keep it in to support HashLips and his channel.
-    // =============================================================================
-    // (bool hs, ) = payable(0x943590A42C27D08e3744202c4Ae5eD55c2dE240D).call{value: address(this).balance * 5 / 100}("");
-    // require(hs);
-    // =============================================================================
+  function _startTokenId() internal view virtual override returns (uint256) {
+    return 1;
+  }
 
+  function withdraw() public onlyOwner {
     // This will transfer the remaining contract balance to the owner.
     // Do not remove this otherwise you will not be able to withdraw the funds.
     // =============================================================================
-    (bool os, ) = payable(0x5e377F79c9954FF9ef2CFEfF193Ba9d4A967ca1B).call{value: address(this).balance}("");
+    (bool os, ) = payable(fundsReceiver).call{value: address(this).balance}("");
     require(os);
     // =============================================================================
   }
@@ -157,7 +147,7 @@ contract FuckGunsNFT is ERC721, Ownable {
   function _mintLoop(address _receiver, uint256 _mintAmount) internal {
     for (uint256 i = 0; i < _mintAmount; i++) {
       supply.increment();
-      _safeMint(_receiver, supply.current());
+      _safeMint(_receiver, 1);
     }
   }
 
