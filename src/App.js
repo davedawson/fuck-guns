@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import ReactGA from "react-ga";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
@@ -211,9 +210,6 @@ function App() {
   useEffect(() => {
     getData();
   }, [blockchain.account]);
-
-  const TRACKING_ID = "G-NWSZG3ZRVC"; // OUR_TRACKING_ID
-  ReactGA.initialize(TRACKING_ID);
 
   return (
     <>
