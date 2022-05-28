@@ -227,7 +227,7 @@ function App() {
         // image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
         {/* <h1>TEST NFT WATERMARK</h1> */}
-        <StyledLogo alt={"logo"} src={"/config/images/fuck-guns-nft-logo.png"} />
+        <StyledLogo alt={"logo"} src={"/config/images/fuck-guns-nft-logo.svg"} />
         <s.SpacerSmall />
         <div className="description">
           <h1><strong>FUCK GUNS</strong></h1>
