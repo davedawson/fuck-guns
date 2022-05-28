@@ -230,7 +230,7 @@ function App() {
           <p>We can’t take anymore doom scrolling. It’s time to DO SOMETHING.</p>
           <p>The tragedy in Uvalde, Texas should have never happened. Gun violence is a uniquely American problem and we are tired of inaction.</p>
           <p>Let’s harness the power of the community in Web3 to show our support for ending these senseless acts of violence and donate to organizations that are critical in the fight to end gun violence.</p>
-          <p>We are releasing a limited edition NFT of 2500 at a mint price of .01 ETH + gas. All proceeds from the mint and secondary sales go directly to the ETH wallet via smart contract to <a href="https://www.everytown.org/">Everytown for Gun Safety</a>.</p>
+          <p>We are releasing a limited edition of 2500 identical NFTs at a mint price of .01 ETH + gas. All proceeds from the mint and secondary sales go directly to the ETH wallet via smart contract to <a href="https://www.everytown.org/">Everytown for Gun Safety</a>.</p>
           <p>This project is not associated with Everytown for Gun Safety. We just want to support their work and hope that you do too.</p>
         </div>
         <ResponsiveWrapper flex={1} style={{ padding: 0 }}>
@@ -453,6 +453,10 @@ function App() {
             <p>Yes. The withdrawal function in the minting contract deposits all funds directly into Everytown for Gun Safety’s eth wallet. We'll initiate the transaction once the project mints out. You can inspect the contract code here to confirm. All secondary sales will also go directly to that wallet.</p>
             <h3>Who made this?</h3>
             <p>Two concerned parents who, just like you, are fed up with the lack of action and solutions to gun violence. <a href="https://twitter.com/davedawson">Dave</a> has a background in design and web products for mission driven organizations and <a href="https://twitter.com/Samantha__Couch">Sam</a> works in nonprofit and political advocacy fighting for justice and equity.&nbsp;</p>
+            <h3>Why are all of the NFTs the same?</h3>
+            <p>We felt it was important to focus on message instead of traits. Each NFT in the Fuck Guns collection has identical artwork, but there are 2500 numbered editions.</p>
+            <h3>Is the artwork cc0?</h3>
+            <p>Yes! The Fuck Guns NFT artwork is cc0 and we encourage you to use it however you'd like. </p>
           </div>
       </s.Container>
 
