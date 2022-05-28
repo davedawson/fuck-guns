@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import ReactGA from "react-ga";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
@@ -110,6 +111,7 @@ const User = () => {
   );
 };
 
+
 function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
@@ -210,7 +212,11 @@ function App() {
     getData();
   }, [blockchain.account]);
 
+  const TRACKING_ID = "G-NWSZG3ZRVC"; // OUR_TRACKING_ID
+  ReactGA.initialize(TRACKING_ID);
+
   return (
+    <>
     <s.Screen>
       <s.Container
         flex={1}
@@ -457,6 +463,7 @@ function App() {
       
 
     </s.Screen>
+    </>
   );
 }
 
