@@ -227,7 +227,7 @@ function App() {
         <s.SpacerSmall />
         <div className="description">
           <h1><strong>FUCK GUNS</strong></h1>
-          <p>We can’t take anymore doom scrolling. It’s time to DO SOMETHING.</p>
+          {/* <p>We can’t take anymore doom scrolling. It’s time to DO SOMETHING.</p> */}
           <p>The tragedy in Uvalde, Texas should have never happened. Gun violence is a uniquely American problem and we are tired of inaction.</p>
           <p>Let’s harness the power of the community in Web3 to show our support for ending these senseless acts of violence and donate to organizations that are critical in the fight to end gun violence.</p>
           <p>We are releasing a limited edition of 2500 identical NFTs at a mint price of .01 ETH + gas. All proceeds from the mint and secondary sales go directly to the ETH wallet via smart contract to <a href="https://www.everytown.org/">Everytown for Gun Safety</a>.</p>
