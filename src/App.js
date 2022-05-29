@@ -142,8 +142,8 @@ function App() {
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
-    console.log("Cost: ", totalCostWei);
-    console.log("Gas limit: ", totalGasLimit);
+    // console.log("Cost: ", totalCostWei);
+    // console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
@@ -199,7 +199,7 @@ function App() {
       },
     });
     const config = await configResponse.json();
-    console.log(config);
+    // console.log(config);
     SET_CONFIG(config);
   };
 
@@ -220,9 +220,7 @@ function App() {
         style={{ 
           backgroundColor: "var(--primary)",
         }}
-        // image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        {/* <h1>TEST NFT WATERMARK</h1> */}
         <StyledLogo alt={"logo"} src={"/config/images/fuck-guns-nft-logo.svg"} />
         <s.SpacerSmall />
         <div className="description">
@@ -255,14 +253,6 @@ function App() {
                     CONNECT
                   </StyledButton>
                   <s.SpacerSmall />
-                  {/* <s.TextDescription
-                    style={{
-                      textAlign: "left",
-                      color: "var(--accent-text)",
-                    }}
-                  >
-                    Connect to the {CONFIG.NETWORK.NAME} network
-                  </s.TextDescription> */}                  
                   {blockchain.errorMsg !== "" ? (
                     <>
                       <s.SpacerSmall />
@@ -372,56 +362,13 @@ function App() {
               </>
             ) : (
               <>
-                {/* <s.TextTitle
-                  style={{ textAlign: "left", color: "var(--accent-text)" }}
-                >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
-                </s.TextTitle>
-                <s.SpacerXSmall />
-                <s.TextDescription
-                  style={{ textAlign: "left", color: "var(--accent-text)" }}
-                >
-                  Excluding gas fees.
-                </s.TextDescription>
-                <s.SpacerSmall /> */}
               </>
             )}
             <s.SpacerMedium />
           </s.Container>
           <s.SpacerLarge />
-          {/* <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg
-              alt={"example"}
-              src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
-            />
-          </s.Container> */}
         </ResponsiveWrapper>
         <s.SpacerMedium />
-        {/* <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
-          <s.TextDescription
-            style={{
-              textAlign: "center",
-              color: "var(--primary-text)",
-            }}
-          >
-            Please make sure you are connected to the right network (
-            {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
-            Once you make the purchase, you cannot undo this action.
-          </s.TextDescription>
-          <s.SpacerSmall />
-          <s.TextDescription
-            style={{
-              textAlign: "center",
-              color: "var(--primary-text)",
-            }}
-          >
-            We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
-            successfully mint your NFT. We recommend that you don't lower the
-            gas limit.
-          </s.TextDescription>
-        </s.Container> */}
       <s.SpacerMedium />
       
         
@@ -430,9 +377,6 @@ function App() {
         flex={1}
         ai={"left"}
         className="faq"
-        style={{ 
-          
-        }}
       >
         <s.TextTitle
             style={{
@@ -459,9 +403,6 @@ function App() {
             <p>Yes! The Fuck Guns NFT artwork is cc0 and we encourage you to use it however you'd like. </p>
           </div>
       </s.Container>
-
-      
-
     </s.Screen>
     </>
   );
